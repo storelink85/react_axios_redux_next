@@ -38,29 +38,25 @@ function Ab_form({
     initialValues: {
       name: "",
       email: "",
-      age: 0,
-      password: "",
-      password_confirmation: "",
+      zone_and_city: 0,
     },
     validate: validateForm,
   });
 
-  async function handleSubmit({ email, name, age }: UserFormDTO) {
+  async function handleSubmit({ email, name, zone_and_city }: UserFormDTO) {
     setLoading(true);
     try {
       const value = await dispatch(
         simulateRegisterUser({
-          password_confirmation: "",
-          password: "",
           email,
           name,
-          age,
+          zone_and_city,
         }),
       ).unwrap();
       setModalOpened(true);
       setUserData({
         name: value.name,
-        age: value.age,
+        zone_and_city: value.zone_and_city,
         email: value.email,
       });
       form.reset();
@@ -75,13 +71,13 @@ function Ab_form({
   function showModalUser() {
     return (
       <ModalUser
-        name={userData?.name || ""}
-        email={userData?.email || ""}
-        age={userData?.age || 0}
-        onClose={() => setModalOpened(false)}
-        opened={openModal}
-        messageToLocalStorage={user + " : added user"}
-      ></ModalUser>
+    name={userData?.name || ""}
+    email={userData?.email || ""}
+    zone_and_city={userData?.zone_and_city || 1}
+    onClose={() => setModalOpened(false)}
+    opened={openModal}
+    messageToLocalStorage={user + " : added user"}
+    />
     );
   }
 
@@ -115,7 +111,7 @@ function Ab_form({
         <Button
           type="submit"
           mt="lg"
-          disabled={!form.values.name || !form.values.email || !form.values.age}
+          disabled={!form.values.name || !form.values.email || !form.values.zone_and_city}
           loading={loading}
         >
           {buttonLabel}

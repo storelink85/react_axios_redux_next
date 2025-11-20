@@ -1,39 +1,48 @@
+"use client";
+
 import {
   Card,
   Image,
   Text,
-  Badge,
   Button,
   Group,
   Container,
 } from "@mantine/core";
 
+import { useTranslation } from "react-i18next";
+import { useRouter } from "next/navigation";
+import { Paths } from "@/constants/costants";
+
 function CardDashboard() {
+  const { t } = useTranslation();
+  const router = useRouter();
+
   return (
-    <Container mt={10}>
-      <Card shadow="sm" padding="lg" radius="md" withBorder>
-        <Card.Section>
-          <Image
-            src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-            height={160}
-            alt="Norway"
-          />
-        </Card.Section>
+      <Container mt={10}>
+        <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <Card.Section>
+            <Image
+                src="https://www.aspirastore.com/blog/wp-content/uploads/2021/02/pulizie-di-casa-settimanali-aspirapolvere-centralizzato.jpg"
+                height={300}
+                alt="Norway"
+            />
+          </Card.Section>
 
-        <Group justify="space-between" mt="md" mb="xs">
-          <Text fw={500}>Norway Fjord Adventures</Text>
-          <Badge color="pink">On Sale</Badge>
-        </Group>
+          <Group justify="space-between" mt="md" mb="xs">
+            <Text fw={500}>{t("mainText")}</Text>
+          </Group>
 
-        <Text size="sm" c="dimmed">
-          Example card
-        </Text>
-
-        <Button color="blue" fullWidth mt="md" radius="md">
-          Book classic tour now
-        </Button>
-      </Card>
-    </Container>
+          <Button
+              color="blue"
+              fullWidth
+              mt="md"
+              radius="md"
+              onClick={() => router.push(Paths.formMantine)}
+          >
+            {t("mainButton")}
+          </Button>
+        </Card>
+      </Container>
   );
 }
 

@@ -1,12 +1,6 @@
 {
-  "exampleForm" : "welcome in next app",
-  "languages" : "English app",
-  "homePage": "HomePage",
-  "formMantine": "FormExampleMantine",
-  "dashboard": "Dashboard",
-  "inputNumbers": "Enter the Numbers",
-  "numbersSeparated": "Numbers separated by comma",
-  "numbersPlaceholder": "E.g: 4, 2, 8, 5",
-  "sortNumbers": "Sort Numbers",
-  "sortedNumbers": "Sorted Numbers"
+  "homePage" : "HomePage",
+  "languages" : "app in italiano",
+  "mainText" : "find service for cleaning your home",
+  "mainButton" : "find the service for you"
 }

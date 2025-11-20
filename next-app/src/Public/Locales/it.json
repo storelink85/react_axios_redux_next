@@ -1,12 +1,7 @@
 {
-  "exampleForm" : "welcome in next app",
+  "homePage" : "HomePage",
   "languages" : "app in italiano",
-  "homePage": "Home",
-  "formMantine": "EsempioformMantine",
-  "dashboard": "Dashboard",
-  "inputNumbers": "Inserisci i Numeri",
-  "numbersSeparated": "Numeri separati da virgola",
-  "numbersPlaceholder": "Es: 4, 2, 8, 5",
-  "sortNumbers": "Ordina Numeri",
-  "sortedNumbers": "Numeri Ordinati"
+  "mainText" : "Cerca per zona il servizio di pulizie",
+  "mainButton" : "Cerca il servizion adatto a te"
+
 }

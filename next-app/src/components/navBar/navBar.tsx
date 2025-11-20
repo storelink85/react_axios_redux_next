@@ -12,20 +12,20 @@ function NavBar() {
       <div className={styles.navLink}>
         <NavLink
           component={Link}
-          href={Paths.homePage}
+          href={Paths.dashboard}
           label={t("HomePage")}
           leftSection={<IconHome2 size="1rem" stroke={1.5} />}
         />
         <NavLink
           component={Link}
           href={Paths.formMantine}
-          label={t("formMantine")}
+          label={"tbd"}
           leftSection={<IconHome2 size="1rem" stroke={1.5} />}
         />
         <NavLink
           component={Link}
           href={Paths.dashboard}
-          label={t("dashboard")}
+          label={"tbd"}
           leftSection={<IconGauge size="1rem" stroke={1} />}
           rightSection={
             <IconChevronRight

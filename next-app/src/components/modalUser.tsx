@@ -3,7 +3,7 @@ import { Modal } from "@mantine/core";
 type CardProps = {
   name: string;
   email: string;
-  age: number;
+  zone_and_city: any;
   onClose: () => void;
   opened: boolean;
   messageToLocalStorage: boolean | string;
@@ -12,7 +12,7 @@ type CardProps = {
 function ModalUser({
   name,
   email,
-  age,
+  zone_and_city,
   onClose,
   opened,
   messageToLocalStorage = "unknown user",
@@ -21,7 +21,7 @@ function ModalUser({
     <Modal opened={opened} onClose={onClose} title={messageToLocalStorage}>
       <p>{name}</p>
       <p>{email}</p>
-      <p>{age}</p>
+      <p>{zone_and_city}</p>
     </Modal>
   );
 }
