@@ -9,7 +9,7 @@ export function handleTypesInGenericForm(labels: string): string {
       return "file";
     case "email":
       return "email";
-    case "age":
+    case "fascia di prezzo":
       return "number";
     default:
       return "text";

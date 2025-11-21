@@ -20,7 +20,7 @@ export const simulateRegisterUser = createAsyncThunk(
         },
       };
       const response: AxiosResponse<UserFormDTO> = await axios.post(
-        `${API_URL}/add`,
+        `${API_URL}/find`,
         body,
         config,
       );
@@ -36,7 +36,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {},
-  extraReducers(builder) {
+  extraReducers(builder: { addCase: (arg0: any, arg1: (state: UserState) => void) => { (): any; new(): any; addCase: { (arg0: any, arg1: (state: UserState, action: any) => void): { (): any; new(): any; addCase: { (arg0: any, arg1: (state: UserState) => void): void; new(): any; }; }; new(): any; }; }; }) {
     builder
       .addCase(simulateRegisterUser.pending, (state: UserState) => {
         state.action = USER_START;

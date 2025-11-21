@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+// @ts-ignore
 import { useForm } from "@mantine/form";
+// @ts-ignore
 import { TextInput, Button, Container } from "@mantine/core";
 import { validateForm } from "@/utils/validateFunction/validateFormOne";
 import ModalUser from "./modalUser";
@@ -37,27 +39,34 @@ function Ab_form({
     mode: mode || "controlled",
     initialValues: {
       name: "",
+      surname : "",
       email: "",
-      zone_and_city: 0,
+      zone_and_city: "",
+      price : ""
     },
-    validate: validateForm,
+   /* validate: validateForm,*/
+      /*todo sistemare il validate*/
   });
 
-  async function handleSubmit({ email, name, zone_and_city }: UserFormDTO) {
+  async function handleSubmit({  name, surname, email ,zone_and_city , price}: UserFormDTO) {
     setLoading(true);
     try {
       const value = await dispatch(
         simulateRegisterUser({
-          email,
           name,
+          surname,
+          email,
           zone_and_city,
+          price,
         }),
       ).unwrap();
       setModalOpened(true);
       setUserData({
         name: value.name,
-        zone_and_city: value.zone_and_city,
+        surname : value.name,
         email: value.email,
+        zone_and_city: value.zone_and_city,
+        price : value.price,
       });
       form.reset();
       setNotification(true);
@@ -65,15 +74,17 @@ function Ab_form({
       console.log(error + consoleLog.error);
     } finally {
       setLoading(false);
+      console.log("ok");
     }
   }
 
-  function showModalUser() {
+ function showModalUser() {
     return (
       <ModalUser
     name={userData?.name || ""}
     email={userData?.email || ""}
     zone_and_city={userData?.zone_and_city || 1}
+    price={userData?.price}
     onClose={() => setModalOpened(false)}
     opened={openModal}
     messageToLocalStorage={user + " : added user"}
@@ -86,9 +97,9 @@ function Ab_form({
       <NotificationInfo
         color={"green"}
         radius={"10"}
-        title={"user added successfully."}
+        title={"Abbiamo inviato la tua riciesta"}
         message={
-          "if you go to the dashboard page, you can see the Redux useAppSelector information"
+          "Ti conteatteremo via mail"
         }
         onClose={() => setNotification(false)}
       />
@@ -111,7 +122,8 @@ function Ab_form({
         <Button
           type="submit"
           mt="lg"
-          disabled={!form.values.name || !form.values.email || !form.values.zone_and_city}
+          /*disabled={!form.values.name || !form.values.email || !form.values.zone_and_city
+          || !form.values.surname}*/
           loading={loading}
         >
           {buttonLabel}

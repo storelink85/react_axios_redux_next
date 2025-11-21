@@ -14,10 +14,7 @@ export const validateForm = (values: UserFormDTO) => {
     : null;
 
   switch (true) {
-    case isNaN(Number(values.age)):
-      errors.age = "Age must be a valid number";
-      break;
-    case values.age! < 18:
+    case values.zone_and_city  :
       errors.age = "You must be at least 18 to register";
       break;
     case values.age! > 100:

@@ -18,13 +18,9 @@ export default function FormExampleMantine() {
     renderCount.current += 1;
   });
 
-  const formattedDate = formatDateToItalianLocale(new Date());
   return (
-    <Container mt={20}>
-      <p>{t("exampleForm")}</p>
-      <p>{t("languages")}</p>
-      <p>{formattedDate}</p>
-      <p>The component has been rendered {renderCount.current} times.</p>
+    <Container mt={10}>
+    <h1>Cerca per zona il servizio di pulzie</h1>
       <Ab_form
         mode={"controlled"}
         labels={labelsForFormOne}

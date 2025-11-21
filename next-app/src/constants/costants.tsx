@@ -1,13 +1,14 @@
-export const labelsForFormOne = ["Name", "Email", "Age", "password"];
+export const labelsForFormOne = ["Nome", "Cognome" , "Email", "Città e via" , "fascia di prezzo"];
 export const placeholdersForFormOne = [
   //TODO add i18n
   "Insert name",
+  "Insert surname",
   "Insert email",
-  "Insert age",
-  "insert password",
+  "Insert localtion",
+  "fascia di prezzo",
 ];
 
-export const typesInput = ["email", "password"];
+export const typesInput = ["email", "password", "numeric"];
 
 export enum Paths {
   homePage = "/",
